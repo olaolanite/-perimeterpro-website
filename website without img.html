@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perimeter Pro – Fencing & Security Solutions, Lagos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #ffffff;
+    --offwhite: #111111;
+    --steel: #555555;
+    --rust: #1a4fa0;
+    --rust-light: #2e6fd4;
+    --midgray: #f0f0f0;
+    --lightgray: #777777;
+    --border: rgba(0,0,0,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--offwhite);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: none;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 3rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #ffffff;
+    backdrop-filter: none;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    color: var(--offwhite);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--rust); }
+
+  .nav-logo-img {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .nav-logo-img-el {
+    height: 100px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555555;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #000000; }
+
+  .nav-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rust);
+    color: #ffffff !important;
+    padding: 0.55rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--rust-light) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 3rem 4rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+    background-image: url("images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* diagonal grid lines background */
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.82);
+    pointer-events: none;
+  }
+
+  #services {
+    position: relative;
+    background-image: url("images/services-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  #services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.88);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #services > * { position: relative; z-index: 1; }
+
+  #why {
+    position: relative;
+  }
+  #why::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='30'%3E%3Cline x1='0' y1='15' x2='80' y2='15' stroke='rgba(0,0,0,0.06)' stroke-width='1'/%3E%3Cline x1='0' y1='5' x2='80' y2='5' stroke='rgba(0,0,0,0.03)' stroke-width='0.5'/%3E%3Cline x1='0' y1='25' x2='80' y2='25' stroke='rgba(0,0,0,0.03)' stroke-width='0.5'/%3E%3Cellipse cx='20' cy='15' rx='4' ry='3' fill='none' stroke='rgba(0,0,0,0.07)' stroke-width='1'/%3E%3Cellipse cx='60' cy='15' rx='4' ry='3' fill='none' stroke='rgba(0,0,0,0.07)' stroke-width='1'/%3E%3Cline x1='0' y1='13' x2='16' y2='13' stroke='rgba(0,0,0,0.05)' stroke-width='0.8'/%3E%3Cline x1='24' y1='13' x2='56' y2='13' stroke='rgba(0,0,0,0.05)' stroke-width='0.8'/%3E%3Cline x1='64' y1='13' x2='80' y2='13' stroke='rgba(0,0,0,0.05)' stroke-width='0.8'/%3E%3C/svg%3E");
+    background-size: 80px 30px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #why > * { position: relative; z-index: 1; }
+
+  .hero-content { position: relative; z-index: 2; }
+  .hero-right { position: relative; z-index: 2; }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #1a4fa0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: #1a4fa0;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--offwhite);
+    margin-bottom: 2rem;
+  }
+  .hero-title .accent { color: var(--rust); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--steel);
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rust);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--rust-light); transform: translateY(-2px); }
+
+  .btn-ghost {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--offwhite); }
+
+  /* hero right – stats grid */
+  .hero-right {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    animation: fadeUp 1s 0.3s both;
+  }
+
+  .stat-cell {
+    background: #f7f7f7;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-cell::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--rust);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s;
+  }
+  .stat-cell:hover::before { transform: scaleY(1); }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--offwhite);
+    margin-bottom: 0.4rem;
+  }
+  .stat-num span { color: var(--rust); font-size: 2rem; }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--lightgray);
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    padding: 0.9rem 0;
+    background: var(--midgray);
+  }
+  .ticker {
+    display: flex;
+    gap: 4rem;
+    animation: ticker 22s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--steel);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ticker-item::before { content: '◆'; color: var(--rust); font-size: 0.5rem; }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    padding: 7rem 3rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .section-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--lightgray);
+    letter-spacing: 0.1em;
+    padding-bottom: 0.2rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--black);
+    padding: 0;
+    transition: background 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover { background: transparent; }
+
+  .service-img-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .service-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+  .service-card:hover .service-img-wrap img { transform: scale(1.05); }
+
+  .service-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 2px dashed var(--border);
+    color: var(--lightgray);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .service-img-placeholder:hover { border-color: var(--rust); }
+  .service-img-placeholder svg { opacity: 0.4; }
+
+  .service-card-body {
+    padding: 2rem 2rem 2.5rem;
+    flex: 1;
+  }
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .service-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--rust);
+    margin-bottom: 0.8rem;
+  }
+
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    color: var(--offwhite);
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--lightgray);
+  }
+
+  /* ── WHY US ── */
+  #why {
+    padding: 7rem 3rem;
+    background: var(--midgray);
+    position: relative;
+  }
+
+  #why::before {
+    content: 'WHY US';
+    position: absolute;
+    top: 3rem; right: 3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 12vw, 12rem);
+    color: rgba(255,255,255,0.02);
+    pointer-events: none;
+    letter-spacing: 0.05em;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .why-list { display: flex; flex-direction: column; gap: 0; }
+
+  .why-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .why-item-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--rust);
+    padding-top: 0.2rem;
+    min-width: 2rem;
+  }
+
+  .why-item-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  .why-item-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--lightgray);
+  }
+
+  .why-right {
+    background: #f7f7f7;
+    border: 1px solid var(--border);
+    padding: 3rem;
+    position: relative;
+  }
+
+  .why-right::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--rust), transparent);
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #111111;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .testimonial-text::before { content: '"'; color: var(--rust); font-size: 2rem; font-style: normal; display: block; line-height: 1; margin-bottom: 0.5rem; }
+
+  .testimonial-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+  .testimonial-author strong { color: var(--offwhite); display: block; margin-bottom: 0.2rem; }
+
+  /* ── PROJECTS ── */
+  #projects {
+    padding: 7rem 3rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .project-card {
+    background: var(--midgray);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: background 0.3s;
+  }
+  .project-card:hover { background: #2e2e2e; }
+  .project-card.featured { grid-row: 1 / 3; min-height: 460px; }
+
+  .project-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .project-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    color: var(--offwhite);
+    margin-bottom: 0.5rem;
+  }
+  .project-card.featured .project-name { font-size: 2.5rem; }
+
+  .project-loc {
+    font-size: 0.82rem;
+    color: var(--lightgray);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 7rem 3rem;
+    background: var(--midgray);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--steel);
+    margin-bottom: 3rem;
+    max-width: 440px;
+  }
+
+  .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-item-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    min-width: 5rem;
+    padding-top: 0.1rem;
+  }
+
+  .contact-item-value {
+    font-size: 0.95rem;
+    color: var(--offwhite);
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+
+  .form-input, .form-select, .form-textarea {
+    background: #f7f7f7;
+    border: 1px solid var(--border);
+    color: var(--offwhite);
+    padding: 0.85rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--rust);
+  }
+  .form-select { cursor: pointer; }
+  .form-textarea { resize: vertical; min-height: 110px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+  .btn-submit {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rust);
+    color: #ffffff;
+    padding: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: var(--rust-light); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+  }
+  .footer-logo span { color: var(--rust); }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--lightgray);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lightgray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--rust); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content { animation: fadeUp 0.8s 0.1s both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+
+    #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
+    .hero-right { display: grid; grid-template-columns: 1fr 1fr; }
+
+    #services, #why, #projects, #contact { padding: 5rem 1.5rem; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-row: auto; min-height: 280px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+
+    .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  /* ── ANIMATIONS & TRANSITIONS ── */
+
+  /* Fade up on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0.05s; }
+  .reveal-stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay: 0.15s; }
+  .reveal-stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay: 0.25s; }
+  .reveal-stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay: 0.35s; }
+  .reveal-stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay: 0.45s; }
+  .reveal-stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay: 0.55s; }
+
+  /* Smooth nav shadow on scroll */
+  nav {
+    transition: box-shadow 0.3s ease;
+  }
+  nav.scrolled {
+    box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+  }
+
+  /* Nav links underline slide */
+  .nav-links a {
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 2px;
+    background: var(--rust);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* CTA button pulse on hover */
+  .nav-cta {
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .nav-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(26,79,160,0.25) !important;
+  }
+
+  /* Hero stat cells count up feel */
+  .stat-cell {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .stat-cell:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Service card lift */
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  }
+  .service-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10) !important;
+  }
+
+  /* Service image zoom */
+  .service-img-wrap {
+    overflow: hidden;
+  }
+  .service-img-wrap img {
+    transition: transform 0.5s ease !important;
+  }
+  .service-card:hover .service-img-wrap img {
+    transform: scale(1.06) !important;
+  }
+
+  /* Project card lift */
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
+
+  /* Why item hover */
+  .why-item {
+    transition: padding-left 0.25s ease;
+  }
+  .why-item:hover {
+    padding-left: 0.5rem;
+  }
+
+  /* Buttons */
+  .btn-primary, .btn-submit {
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .btn-primary:hover, .btn-submit:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(26,79,160,0.3) !important;
+  }
+
+  /* Form inputs focus glow */
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(26,79,160,0.12);
+    outline: none;
+  }
+
+  /* Trust badge cards */
+  #trust [style*="background:#ffffff"] {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #trust [style*="background:#ffffff"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  }
+
+  /* Section header line grow */
+  .section-header {
+    position: relative;
+  }
+
+  /* WhatsApp button bounce */
+  .wa-float {
+    animation: waBounce 2.5s ease-in-out infinite;
+  }
+  @keyframes waBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .wa-float:hover {
+    animation: none !important;
+    transform: translateY(-3px) !important;
+  }
+
+  /* Hero content slide in */
+  .hero-content {
+    animation: heroSlideIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes heroSlideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Hero right fade in */
+  .hero-right {
+    animation: heroFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Stat numbers pulse once on load */
+  .stat-num {
+    animation: statPulse 0.6s ease 0.8s both;
+  }
+  @keyframes statPulse {
+    0%   { transform: scale(0.85); opacity: 0; }
+    60%  { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Ticker smooth */
+  .ticker { will-change: transform; }
+
+  /* Logo hover */
+  .nav-logo-img-el {
+    transition: transform 0.2s ease;
+  }
+  .nav-logo-img:hover .nav-logo-img-el {
+    transform: scale(1.05);
+  }
+
+  /* Page load fade in */
+  body {
+    animation: pageFade 0.5s ease both;
+  }
+  @keyframes pageFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+</style>
+  <link rel="icon" type="image/png" href="images/logo-original.png">
+</head>
+<body>
+
+<!-- NAV -->
+
+<!-- UNDER CONSTRUCTION BANNER -->
+<div id="construction-banner" style="
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: #1a4fa0;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.6rem 3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+">
+  <span>🚧</span>
+  <span>Website under construction — some sections are still being updated</span>
+  <span>🚧</span>
+  <button onclick="document.getElementById('construction-banner').style.display='none'; document.querySelector('nav').style.top='0';"
+    style="background:transparent; border:1px solid rgba(255,255,255,0.4); color:#ffffff; font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; padding:0.2rem 0.6rem; cursor:pointer; margin-left:1rem;">
+    Dismiss
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('construction-banner');
+    const nav = document.querySelector('nav');
+    if (banner && nav) {
+      const bannerHeight = banner.offsetHeight;
+      nav.style.top = bannerHeight + 'px';
+    }
+  });
+</script>
+
+<nav>
+  <a href="#" class="nav-logo-img" aria-label="PerimeterPro Home">
+    <img src="images/logo.png" alt="PerimeterPro Logo" class="nav-logo-img-el">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <p class="hero-tag">A subsidiary of JJS&S Enterprise · Est. 2021 · CAC Registered · BN 3427295</p>
+    <h1 class="hero-title">
+      Secure<br>
+      Every<br>
+      <span class="accent">Boundary.</span>
+    </h1>
+    <p class="hero-sub">
+      Commercial fencing, industrial perimeter solutions, and estate security installations built to last — serving clients nationwide.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="#projects" class="btn-ghost">View Projects →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-cell">
+      <div class="stat-num">39<span>+</span></div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">6<span>yr</span></div>
+      <div class="stat-label">In Operation</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">48<span>hr</span></div>
+      <div class="stat-label">Site Visit Turnaround</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Barbed Wire Fencing</span>
+    <span class="ticker-item">Electric Perimeter Systems</span>
+    <span class="ticker-item">Chain Link Installation</span>
+    <span class="ticker-item">Galvanized Steel Fencing</span>
+    <span class="ticker-item">Estate Boundary Walls</span>
+    <span class="ticker-item">Industrial Security Fencing</span>
+    <span class="ticker-item">Commercial Projects</span>
+    <span class="ticker-item">Lekki-Epe Corridor Specialists</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item">Barbed Wire Fencing</span>
+    <span class="ticker-item">Electric Perimeter Systems</span>
+    <span class="ticker-item">Chain Link Installation</span>
+    <span class="ticker-item">Galvanized Steel Fencing</span>
+    <span class="ticker-item">Estate Boundary Walls</span>
+    <span class="ticker-item">Industrial Security Fencing</span>
+    <span class="ticker-item">Commercial Projects</span>
+    <span class="ticker-item">Lekki-Epe Corridor Specialists</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+
+<!-- TRUST BADGE SECTION -->
+<section id="trust" style="padding:4rem 3rem; background:#f7f7f7; border-bottom:1px solid rgba(0,0,0,0.08);">
+  <div style="max-width:900px; margin:0 auto; display:flex; align-items:center; gap:3rem; flex-wrap:wrap; justify-content:center;">
+    
+    <!-- CAC Badge -->
+    <div style="display:flex; align-items:center; gap:1.2rem; background:#ffffff; border:1px solid rgba(0,0,0,0.1); padding:1.5rem 2rem; flex:1; min-width:280px;">
+      <div style="width:52px; height:52px; background:#1a4fa0; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+        </svg>
+      </div>
+      <div>
+        <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#1a4fa0; margin-bottom:0.3rem;">Federal Republic of Nigeria</p>
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:1.2rem; letter-spacing:0.04em; color:#111111; margin-bottom:0.1rem;">JJS&S Enterprise</p>
+        <p style="font-size:0.78rem; color:#777777;">CAC Registered · BN 3427295 · July 2021</p>
+      </div>
+    </div>
+
+    <!-- Nationwide Coverage -->
+    <div style="display:flex; align-items:center; gap:1.2rem; background:#ffffff; border:1px solid rgba(0,0,0,0.1); padding:1.5rem 2rem; flex:1; min-width:280px;">
+      <div style="width:52px; height:52px; background:#1a4fa0; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+        </svg>
+      </div>
+      <div>
+        <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#1a4fa0; margin-bottom:0.3rem;">Nationwide Coverage</p>
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:1.2rem; letter-spacing:0.04em; color:#111111; margin-bottom:0.1rem;">Lagos & Beyond</p>
+        <p style="font-size:0.78rem; color:#777777;">Commercial · Industrial · Government</p>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div style="display:flex; align-items:center; gap:1.2rem; background:#ffffff; border:1px solid rgba(0,0,0,0.1); padding:1.5rem 2rem; flex:1; min-width:280px;">
+      <div style="width:52px; height:52px; background:#1a4fa0; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
+        </svg>
+      </div>
+      <div>
+        <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#1a4fa0; margin-bottom:0.3rem;">Proven Track Record</p>
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:1.2rem; letter-spacing:0.04em; color:#111111; margin-bottom:0.1rem;">39+ Projects Delivered</p>
+        <p style="font-size:0.78rem; color:#777777;">Federal agencies · Estates · Corporates</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-header">
+    <div>
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <span class="section-count">09 specialisations</span>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-chain-link" style="position:relative;">
+        <div class="svc-slide svc-slide-chainlink" style="position:absolute;inset:0;background-image:url('images/chainlink.jpg');background-size:cover;background-position:center;opacity:1;transition:opacity 0.8s ease;"></div>
+        <div class="svc-slide svc-slide-chainlink" style="position:absolute;inset:0;background-image:url('images/electric-fence.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s ease;"></div>
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🔗</span>
+        <p class="service-num">01</p>
+        <h3 class="service-name">Chain Link Fencing</h3>
+        <p class="service-desc">Galvanised steel chain link fencing built to withstand Nigeria's climate. Suitable for residential boundaries, schools, sports facilities, and commercial perimeters. Strong, low-maintenance, and available in various heights and gauges to suit your security requirement.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-electric" style="position:relative;">
+        <div class="svc-slide svc-slide-electric" style="position:absolute;inset:0;background-image:url('images/barbed-wire.jpg');background-size:cover;background-position:center;opacity:1;transition:opacity 0.8s ease;"></div>
+        <div class="svc-slide svc-slide-electric" style="position:absolute;inset:0;background-image:url('images/industrial-1.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s ease;"></div>
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">⚡</span>
+        <p class="service-num">02</p>
+        <h3 class="service-name">Electric Fencing</h3>
+        <p class="service-desc">High-voltage electric perimeter fencing designed to deter, detect, and alert. Ideal for residential estates, corporate facilities, warehouses, and government installations. Each system includes an energiser unit, warning signage, and optional alarm integration for maximum security.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-barbed-wire" style="position:relative;">
+        <div class="svc-slide svc-slide-barbed" style="position:absolute;inset:0;background-image:url('images/concertina.jpg');background-size:cover;background-position:center;opacity:1;transition:opacity 0.8s ease;"></div>
+        <div class="svc-slide svc-slide-barbed" style="position:absolute;inset:0;background-image:url('images/estate.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s ease;"></div>
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🪡</span>
+        <p class="service-num">03</p>
+        <h3 class="service-name">Barbed Wire Systems</h3>
+        <p class="service-desc">Single-strand, double-strand, and concertina (razor wire) barbed wire systems installed along wall tops, fences, and perimeter boundaries. An effective and affordable deterrent for residential, commercial, and industrial properties requiring an added layer of security.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-industrial" style="position:relative;">
+        <img src="images/gates-1.jpg" class="ind-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 1s ease;">
+        <img src="images/gates-2.jpg" class="ind-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🏭</span>
+        <p class="service-num">04</p>
+        <h3 class="service-name">Industrial Perimeter</h3>
+        <p class="service-desc">Heavy-duty perimeter fencing solutions engineered for factories, logistics depots, oil and gas facilities, and large-scale industrial compounds. We manage high linear-metre projects across varied terrain, delivering on time and to specification with minimal disruption to site operations.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-estate">
+        <img src="images/gates-3.jpg" alt="estate fencing" class="service-photo" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🏡</span>
+        <p class="service-num">05</p>
+        <h3 class="service-name">Estate &amp; Housing</h3>
+        <p class="service-desc">Perimeter and boundary fencing for residential estate developments, gated communities, and private compounds. We work directly with developers, contractors, and project managers from ground-break through to handover, ensuring boundaries are secured at every stage of construction.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-gates" style="position:relative;">
+        <img src="images/playground-1.jpg" class="gates-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 1s ease;">
+        <img src="images/playground-2.jpg" class="gates-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+        <img src="images/playground-3.jpg" class="gates-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+      </div>
+        <input type="file" id="file-gates" accept="image/*" style="display:none" onchange="loadImage('gates', this)">
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🚪</span>
+        <p class="service-num">06</p>
+        <h3 class="service-name">Gates & Access Points</h3>
+        <p class="service-desc">Design, supply, and installation of manual and motorised gates including sliding gates, swing gates, and pedestrian access points. Fabricated in steel to complement your fencing system and engineered for durability, smooth operation, and long-term reliability.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-playground" style="position:relative;">
+        <img src="images/playground-4.jpg" class="pg-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 1s ease;">
+        <img src="images/construction-1.jpg" class="pg-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+        <img src="images/construction-2.jpg" class="pg-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+        <img src="images/construction-3.jpg" class="pg-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+      </div>
+        <input type="file" id="file-playground" accept="image/*" style="display:none" onchange="loadImage('playground', this)">
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🏟️</span>
+        <p class="service-num">07</p>
+        <h3 class="service-name">Playground Fencing</h3>
+        <p class="service-desc">Purpose-built fencing for school perimeters, recreational parks, football pitches, and sports courts. Designed to keep play areas safe and secure while maintaining clear sightlines for supervision. Available in chain link, wire mesh, and panel systems to suit the environment.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-wrap" id="img-wrap-construction" style="position:relative;">
+        <img src="images/grace-villa-1.jpg" class="tc-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 1s ease;">
+        <img src="images/grace-villa-2.jpg" class="tc-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+        <img src="images/ocean-marine-1.jpg" class="tc-slide" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 1s ease;">
+      </div>
+        <input type="file" id="file-construction" accept="image/*" style="display:none" onchange="loadImage('construction', this)">
+      </div>
+      <div class="service-card-body">
+        <span class="service-icon">🚧</span>
+        <p class="service-num">08</p>
+        <h3 class="service-name">Temporary & Construction Fencing</h3>
+        <p class="service-desc">Rapid-deployment fencing for active construction sites, public events, road closures, and temporary enclosures. Keeps unauthorised persons out, protects equipment, and ensures site compliance. Available for short or long-term hire and installation across Lagos and nationwide.</p>
+      </div>
+    </div>
+  </div>
+    <div class="project-card" style="position:relative; overflow:hidden; min-height:220px;">
+      <div class="tincan-slide" style="position:absolute;inset:0;background-image:url('images/ocean-marine-2.jpg');background-size:cover;background-position:center;opacity:1;transition:opacity 1s ease;"></div>
+      <div class="tincan-slide" style="position:absolute;inset:0;background-image:url('images/tincan-1.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;"></div>
+      <div class="tincan-slide" style="position:absolute;inset:0;background-image:url('images/tincan-2.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;"></div>
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1;"></div>
+      <div style="position:relative;z-index:2;padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:flex-end;height:100%;">
+        <p class="project-type" style="color:#ffffff;">Sliding Gates & Wire Mesh · Industrial Port</p>
+        <h3 class="project-name" style="color:#ffffff;">Tin Can Island Port</h3>
+        <p class="project-loc" style="color:rgba(255,255,255,0.8);">Apapa, Lagos — Gate installation & perimeter wire mesh fencing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Built Different</h2>
+    </div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-list">
+      <div class="why-item">
+        <span class="why-item-num">01</span>
+        <div>
+          <h4 class="why-item-title">Local Expertise</h4>
+          <p class="why-item-desc">We know the Lekki-Epe corridor intimately — soil conditions, site access challenges, and supplier chains. No delays from unfamiliar terrain.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-item-num">02</span>
+        <div>
+          <h4 class="why-item-title">Direct Communication</h4>
+          <p class="why-item-desc">You speak with the person running the job, not an intermediary. Decisions get made fast, and you're never chasing updates.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-item-num">03</span>
+        <div>
+          <h4 class="why-item-title">Commercial-Grade Materials</h4>
+          <p class="why-item-desc">We source heavy-gauge steel and quality-tested fencing materials — not short-cut equivalents. Every installation is built to outlast the warranty.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-item-num">04</span>
+        <div>
+          <h4 class="why-item-title">Project-Ready Team</h4>
+          <p class="why-item-desc">Experienced crew handling projects from 50 metres to multi-hectare sites. We mobilise quickly and work to your construction timeline.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-right">
+      <p class="testimonial-text">
+        They completed our estate perimeter on time and within budget. The quality of the chain link installation was well above what we expected. We've used them on two subsequent projects since.
+      </p>
+      <p class="testimonial-author">
+        <strong>Engr. Adeyemi Okafor</strong>
+        Site Manager — Lakewood Estate, Ibeju-Lekki
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+    </div>
+    <span class="section-count">Select installations · Nationwide</span>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card featured" style="padding:0; overflow:hidden;">
+      <div class="grace-slider" style="position:relative; width:100%; height:100%; min-height:460px;">
+        <div class="grace-slide active" style="position:absolute;inset:0;background-image:url('images/tincan-3.jpg');background-size:cover;background-position:center;transition:opacity 0.8s ease;">
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>
+        </div>
+        <div class="grace-slide" style="position:absolute;inset:0;background-image:url('images/ind-slide-1.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s ease;">
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>
+        </div>
+        <div style="position:absolute;bottom:2rem;left:2rem;z-index:2;">
+          <p class="project-type" style="color:#ffffff;">Electric Fencing · Residential Estate</p>
+          <h3 class="project-name" style="color:#ffffff; font-size:2.5rem;">Grace Villa</h3>
+          <p class="project-loc" style="color:rgba(255,255,255,0.8);">Lekki Phase One, Lagos — Electric perimeter & concertina wire installation</p>
+        </div>
+        <div style="position:absolute;bottom:1.5rem;right:1.5rem;z-index:2;display:flex;gap:0.5rem;">
+          <div class="grace-dot active-dot" style="width:8px;height:8px;border-radius:50%;background:white;cursor:pointer;opacity:1;transition:opacity 0.3s;" onclick="graceSlide(0)"></div>
+          <div class="grace-dot" style="width:8px;height:8px;border-radius:50%;background:white;cursor:pointer;opacity:0.4;transition:opacity 0.3s;" onclick="graceSlide(1)"></div>
+        </div>
+      </div>
+    </div>
+    <div class="project-card" style="position:relative; overflow:hidden; min-height:220px;">
+      <div class="grace-slide" style="position:absolute;inset:0;background-image:url('images/ind-slide-2.jpg');background-size:cover;background-position:center;opacity:1;transition:opacity 1s ease;"></div>
+      <div class="grace-slide" style="position:absolute;inset:0;background-image:url('images/ind-slide-3.jpg');background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;"></div>
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);z-index:1;"></div>
+      <div style="position:relative;z-index:2;padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:flex-end;height:100%;">
+        <p class="project-type" style="color:#ffffff;">Electric Fencing · Residential Estate</p>
+        <h3 class="project-name" style="color:#ffffff;">Grace Villa</h3>
+        <p class="project-loc" style="color:rgba(255,255,255,0.8);">Lekki Phase One, Lagos — High-end residential perimeter</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Quote</h2>
+    </div>
+  </div>
+
+  <div class="contact-grid">
+    <div>
+      <p class="contact-intro">
+        Tell us about your project and we'll get back to you within 24 hours with an initial assessment. Site visits can typically be arranged within 48 hours.
+      </p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-item-label">Phone</span>
+          <span class="contact-item-value">+234 903 541 8489</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">WhatsApp</span>
+          <span class="contact-item-value">+234 903 541 8489</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Email</span>
+          <span class="contact-item-value"><a href="mailto:info@perimeterpro.com.ng" style="color:var(--rust); text-decoration:none;">info@perimeterpro.com.ng</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Address</span>
+          <span class="contact-item-value">Ifesowapo Iron & Building Materials Market,<br>Orile Iganmu, Lagos State</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Hours</span>
+          <span class="contact-item-value">Mon–Sat, 7:00am – 6:00pm</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name</label>
+          <input class="form-input" type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone / WhatsApp</label>
+          <input class="form-input" type="tel" id="phone" placeholder="+234 ...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="project-type">Project Type</label>
+        <select class="form-select" id="project-type">
+          <option value="">Select type...</option>
+          <option>Residential / Private Compound</option>
+          <option>Estate Development</option>
+          <option>Commercial / Office Perimeter</option>
+          <option>Industrial / Warehouse</option>
+          <option>Repair / Upgrade</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="location">Project Location</label>
+        <input class="form-input" type="text" id="location" placeholder="e.g. Ibeju-Lekki, Ajah, Epe...">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Project Details</label>
+        <textarea class="form-textarea" id="message" placeholder="Approximate size, fence type in mind, timeline..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding:7rem 3rem; background: var(--black);">
+  <div style="border-bottom:1px solid var(--border); padding-bottom:2rem; margin-bottom:3rem; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+    <div>
+      <p style="font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--rust); margin-bottom:0.8rem;">Free Tool</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,5vw,4.5rem); line-height:1; letter-spacing:0.02em;">Materials Cost Calculator</h2>
+    </div>
+    <span style="font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--lightgray); letter-spacing:0.1em; padding-bottom:0.2rem;">Estimate your fencing materials</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;">
+
+    <div style="display:flex; flex-direction:column; gap:1.2rem;">
+
+      <div>
+        <label class="calc-label">Fence type</label>
+        <select id="calcFenceType" onchange="calcUpdate()" class="calc-input">
+          <option value="chainlink_galv">Chain link — galvanized</option>
+          <option value="chainlink_pvc">Chain link — PVC coated</option>
+          <option value="wiremesh_anti">Wire mesh — AntiFinger (½" × 3")</option>
+          <option value="wiremesh_finger">Wire mesh — Finger Free (2 × 4)</option>
+          <option value="barbed">Barbed wire</option>
+          <option value="concertina">Concertina / razor wire</option>
+          <option value="wallspike">Wall spikes (WSB 01)</option>
+          <option value="electric">Electric fence</option>
+        </select>
+      </div>
+
+      <div id="calcHeightWrap">
+        <label class="calc-label">Height</label>
+        <select id="calcHeight" onchange="calcUpdate()" class="calc-input">
+          <option value="1.8">1.8 m</option>
+          <option value="2.4">2.4 m</option>
+        </select>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div>
+          <label class="calc-label">Total perimeter (metres)</label>
+          <input type="number" id="calcPerimeter" value="100" min="1" oninput="calcUpdate()" class="calc-input">
+        </div>
+        <div>
+          <label class="calc-label">Gate openings (metres)</label>
+          <input type="number" id="calcGate" value="6" min="0" oninput="calcUpdate()" class="calc-input">
+        </div>
+      </div>
+
+      <div id="calcBarbedOpts" style="display:none; background:var(--midgray); padding:1rem; border-radius:4px;">
+        <label class="calc-label">Roll size</label>
+        <select id="calcBarbedRoll" onchange="calcUpdate()" class="calc-input">
+          <option value="50">2mm × 50m — ₦40,000/roll</option>
+          <option value="70">2mm × 70m — ₦60,000/roll</option>
+        </select>
+      </div>
+
+      <div id="calcConcertinaOpts" style="display:none; background:var(--midgray); padding:1rem; border-radius:4px;">
+        <label class="calc-label">Coil size</label>
+        <select id="calcConcertinaCoil" onchange="calcUpdate()" class="calc-input">
+          <option value="25">450mm × 25m — ₦35,000/coil</option>
+          <option value="15a">600mm × 15m — ₦35,000/coil</option>
+          <option value="15b">730mm × 15m — ₦35,000/coil</option>
+        </select>
+      </div>
+
+      <div id="calcElectricOpts" style="display:none; background:var(--midgray); padding:1rem; border-radius:4px; display:none; flex-direction:column; gap:1rem;">
+        <div>
+          <label class="calc-label">Package</label>
+          <select id="calcElecPackage" onchange="calcUpdate()" class="calc-input">
+            <option value="basic">Basic (energiser + wire + poles)</option>
+            <option value="full">Full security (+ siren + alarm + wifi)</option>
+          </select>
+        </div>
+        <div>
+          <label class="calc-label">Energiser model</label>
+          <select id="calcEnergiser" onchange="calcUpdate()" class="calc-input">
+            <optgroup label="NEMTEK">
+              <option value="300000">Wizord 4 — single zone ₦300,000</option>
+              <option value="520000">Druid 28 — dual zone ₦520,000</option>
+            </optgroup>
+            <optgroup label="EFFANTI JVA">
+              <option value="320000">Z11 — single zone ₦320,000</option>
+              <option value="320000b">Z13 — single zone ₦320,000</option>
+              <option value="650000">Z14 — dual zone ₦650,000</option>
+              <option value="700000">Z25 — dual zone ₦700,000</option>
+            </optgroup>
+          </select>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div>
+            <label class="calc-label">Wire type</label>
+            <select id="calcWireType" onchange="calcUpdate()" class="calc-input">
+              <option value="aluminum">Aluminium 1.6mm — ₦55,946/1000m</option>
+              <option value="galvanized">Galvanized/SS — ₦150,000/500m</option>
+            </select>
+          </div>
+          <div>
+            <label class="calc-label">Wire strands</label>
+            <select id="calcStrands" onchange="calcUpdate()" class="calc-input">
+              <option value="6">6 strands</option>
+              <option value="8">8 strands</option>
+              <option value="9">9 strands</option>
+              <option value="10">10 strands</option>
+              <option value="12">12 strands</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:var(--midgray); border:1px solid var(--border); padding:2.5rem; position:relative;">
+      <div style="position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg, var(--rust), transparent);"></div>
+
+      <p style="font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--steel); margin-bottom:2rem;">Your Estimate</p>
+
+      <div style="display:flex; flex-direction:column; gap:1.2rem; margin-bottom:2rem;">
+        <div style="border-bottom:1px solid var(--border); padding-bottom:1rem;">
+          <p class="calc-res-label">Fence line</p>
+          <p id="calcResFenceLine" class="calc-res-val">— <span style="font-size:1.2rem;">m</span></p>
+        </div>
+        <div style="border-bottom:1px solid var(--border); padding-bottom:1rem;">
+          <p class="calc-res-label">Posts required</p>
+          <p id="calcResPosts" class="calc-res-val">—</p>
+        </div>
+        <div style="border-bottom:1px solid var(--border); padding-bottom:1rem;">
+          <p class="calc-res-label">Units / rolls needed</p>
+          <p id="calcResUnits" class="calc-res-val">—</p>
+        </div>
+        <div>
+          <p class="calc-res-label">Est. materials cost</p>
+          <p id="calcResCost" class="calc-res-val" style="color:var(--rust);">—</p>
+        </div>
+      </div>
+
+      <div id="calcBreakdown" style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--lightgray); line-height:2; border-top:1px solid var(--border); padding-top:1rem; margin-bottom:1.5rem;"></div>
+
+      <a href="#contact" style="display:block; font-family:'DM Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--rust); color:#ffffff; padding:1rem; text-align:center; text-decoration:none;">
+        Get a Full Quote →
+      </a>
+
+      <p style="font-size:0.65rem; color:var(--lightgray); margin-top:1rem; font-family:'DM Mono',monospace; letter-spacing:0.05em;">Materials only. Labour & delivery not included. Final quote confirmed on site visit.</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .calc-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--steel); display:block; margin-bottom:0.4rem; }
+  .calc-input { background:var(--midgray); border:1px solid var(--border); color:var(--offwhite); padding:0.85rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; width:100%; transition:border-color 0.2s; }
+  .calc-input:focus { border-color:var(--rust); }
+  .calc-res-label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--lightgray); margin-bottom:0.3rem; }
+  .calc-res-val { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; line-height:1; color:var(--offwhite); }
+</style>
+
+<script>
+(function() {
+  const POLE_SPACING = 3;
+  const CHAINLINK = { galv: { 1.8: 32000, 2.4: 37000 }, pvc: { 1.8: 35000, 2.4: 40000 } };
+  const CHAINLINK_ROLL = 12;
+  const BARBED = { 50: 40000, 70: 60000 };
+  const CONCERTINA_LEN = { 25: 25, '15a': 15, '15b': 15 };
+  const ENERGISER = { 300000: 300000, 520000: 520000, 320000: 320000, '320000b': 320000, 650000: 650000, 700000: 700000 };
+  const WIREMESH = {
+    anti: { panelWidth: 3, price: 130000, desc: 'AntiFinger ½"×3" · 2.4m×3m panel incl. poles & accessories' },
+    finger: { panelWidth: 2.7, price: 72000, desc: 'Finger Free 2×4 · 2.4m×2.7m panel incl. poles & accessories' }
+  };
+
+  function fmt(n) { return '₦' + Math.round(n).toLocaleString('en-NG'); }
+
+  window.calcUpdate = function() {
+    const type = document.getElementById('calcFenceType').value;
+    const perim = parseFloat(document.getElementById('calcPerimeter').value) || 0;
+    const gate = parseFloat(document.getElementById('calcGate').value) || 0;
+    const fenceLine = Math.max(0, perim - gate);
+    const posts = Math.ceil(fenceLine / POLE_SPACING) + 1;
+    const isChain = type === 'chainlink_galv' || type === 'chainlink_pvc';
+    const isMesh = type === 'wiremesh_anti' || type === 'wiremesh_finger';
+    const isElec = type === 'electric';
+
+    document.getElementById('calcHeightWrap').style.display = isChain ? 'block' : 'none';
+    document.getElementById('calcBarbedOpts').style.display = type === 'barbed' ? 'block' : 'none';
+    document.getElementById('calcConcertinaOpts').style.display = type === 'concertina' ? 'block' : 'none';
+    document.getElementById('calcElectricOpts').style.display = isElec ? 'flex' : 'none';
+
+    document.getElementById('calcResFenceLine').innerHTML = fenceLine.toFixed(1) + ' <span style="font-size:1.2rem;">m</span>';
+    document.getElementById('calcResPosts').textContent = isMesh ? 'incl. in price' : posts;
+
+    let units = 0, unitLabel = '', cost = 0, bkd = '';
+
+    if (isChain) {
+      const h = document.getElementById('calcHeight').value;
+      const price = (type === 'chainlink_galv' ? CHAINLINK.galv : CHAINLINK.pvc)[h] || 32000;
+      units = Math.ceil(fenceLine / CHAINLINK_ROLL);
+      cost = units * price;
+      unitLabel = units + ' rolls';
+      bkd = units + ' rolls × ' + fmt(price) + '/roll<br>Posts: ' + posts + ' units (quoted separately)';
+
+    } else if (isMesh) {
+      const key = type === 'wiremesh_anti' ? 'anti' : 'finger';
+      const m = WIREMESH[key];
+      units = Math.ceil(fenceLine / m.panelWidth);
+      cost = units * m.price;
+      unitLabel = units + ' panels';
+      bkd = m.desc + '<br>' + units + ' panels × ' + fmt(m.price) + '/panel = ' + fmt(cost);
+
+    } else if (type === 'barbed') {
+      const rollLen = parseInt(document.getElementById('calcBarbedRoll').value);
+      const price = BARBED[rollLen];
+      units = Math.ceil(fenceLine / rollLen);
+      cost = units * price;
+      unitLabel = units + ' rolls';
+      bkd = units + ' rolls × ' + fmt(price) + '/roll (' + rollLen + 'm each)';
+
+    } else if (type === 'concertina') {
+      const coilKey = document.getElementById('calcConcertinaCoil').value;
+      const coilLen = CONCERTINA_LEN[coilKey];
+      units = Math.ceil(fenceLine / coilLen);
+      cost = units * 35000;
+      unitLabel = units + ' coils';
+      bkd = units + ' coils × ₦35,000/coil (' + coilLen + 'm each)';
+
+    } else if (type === 'wallspike') {
+      units = Math.ceil(fenceLine / 1.265);
+      cost = units * 15000;
+      unitLabel = units + ' pcs';
+      bkd = units + ' pieces × ₦15,000/pc (1.25–1.28m each)';
+
+    } else if (isElec) {
+      const eKey = document.getElementById('calcEnergiser').value;
+      const eCost = ENERGISER[eKey] || 300000;
+      const wType = document.getElementById('calcWireType').value;
+      const strands = parseInt(document.getElementById('calcStrands').value);
+      const pkg = document.getElementById('calcElecPackage').value;
+      const totalWire = fenceLine * strands;
+      let wireCost = 0, wireDesc = '';
+      if (wType === 'aluminum') {
+        const b = Math.ceil(totalWire / 1000);
+        wireCost = b * 55946;
+        wireDesc = b + ' × 1000m aluminium bundle(s) = ' + fmt(wireCost);
+      } else {
+        const b = Math.ceil(totalWire / 500);
+        wireCost = b * 150000;
+        wireDesc = b + ' × 500m galvanized bundle(s) = ' + fmt(wireCost);
+      }
+      const polesCost = posts * 3500;
+      cost = eCost + wireCost + polesCost + 20000 + 20000 + 35000 + 60000 + 45000 + 37000 + 45000;
+      if (pkg === 'full') cost += 25000 + 170000 + 35000 + 15000 + 52000;
+      units = posts;
+      unitLabel = strands + '-strand system';
+      bkd = 'Energiser: ' + fmt(eCost) + '<br>Wire: ' + wireDesc +
+            '<br>Poles (' + posts + ' × ₦3,500): ' + fmt(polesCost) +
+            '<br>Accessories (ferrules, hooks, signs, earthing, tensioners, gate contacts, light): ' + fmt(20000+20000+35000+60000+45000+37000+45000) +
+            (pkg === 'full' ? '<br>Full security add-ons (siren, wifi, remote, strobe, keypad): ' + fmt(297000) : '') +
+            '<br><strong>Total: ' + fmt(cost) + '</strong>';
+    }
+
+    document.getElementById('calcResUnits').textContent = unitLabel || '—';
+    document.getElementById('calcResCost').textContent = cost ? fmt(cost) : '—';
+    document.getElementById('calcBreakdown').innerHTML = bkd;
+  };
+
+  document.addEventListener('DOMContentLoaded', calcUpdate);
+})();
+</script>
+
+<script>
+const C_POLE_SPACING = 3;
+const C_CHAINLINK = { galv: { 1.8: 32000, 2.4: 37000 }, pvc: { 1.8: 35000, 2.4: 40000 } };
+const C_CHAINLINK_ROLL = 12;
+const C_BARBED = { 50: 40000, 70: 60000 };
+const C_CONC_LEN = { 25: 25, '15a': 15, '15b': 15 };
+const C_ENERGISER = { 300000: 300000, 520000: 520000, 320000: 320000, '320000b': 320000, 650000: 650000, 700000: 700000 };
+const C_WIREMESH = { anti: { panelWidth: 3, price: 130000 }, finger: { panelWidth: 2.7, price: 72000 } };
+
+function cFmt(n) { return '₦' + Math.round(n).toLocaleString('en-NG'); }
+
+function calcUpdate() {
+  const type = document.getElementById('fenceType').value;
+  const perim = parseFloat(document.getElementById('c-perimeter').value) || 0;
+  const gateM = parseFloat(document.getElementById('c-gateWidth').value) || 0;
+  const fenceLine = Math.max(0, perim - gateM);
+  const posts = Math.ceil(fenceLine / C_POLE_SPACING) + 1;
+  const isChainlink = type === 'chainlink_galv' || type === 'chainlink_pvc';
+  const isWiremesh = type === 'wiremesh_anti' || type === 'wiremesh_finger';
+
+  document.getElementById('c-heightWrap').style.display = isChainlink ? 'block' : 'none';
+  document.getElementById('c-electricOpts').style.display = type === 'electric' ? 'flex' : 'none';
+  document.getElementById('c-barbedOpts').style.display = type === 'barbed' ? 'block' : 'none';
+  document.getElementById('c-concertinaOpts').style.display = type === 'concertina' ? 'block' : 'none';
+
+  document.getElementById('c-resFenceLine').textContent = fenceLine.toFixed(1) + ' m';
+  document.getElementById('c-resPosts').textContent = isWiremesh ? 'incl.' : posts;
+
+  let units = 0, unitLabel = '', matCost = 0, bkd = '';
+
+  if (isChainlink) {
+    const h = document.getElementById('c-heightSel').value;
+    const pm = type === 'chainlink_galv' ? C_CHAINLINK.galv : C_CHAINLINK.pvc;
+    const rp = pm[h] || pm['1.8'];
+    units = Math.ceil(fenceLine / C_CHAINLINK_ROLL);
+    matCost = units * rp;
+    unitLabel = units + ' rolls';
+    bkd = units + ' rolls × ' + cFmt(rp) + '/roll = ' + cFmt(matCost) + '<br>Posts: ' + posts + ' units (quoted separately)';
+
+  } else if (isWiremesh) {
+    const key = type === 'wiremesh_anti' ? 'anti' : 'finger';
+    const mesh = C_WIREMESH[key];
+    units = Math.ceil(fenceLine / mesh.panelWidth);
+    matCost = units * mesh.price;
+    unitLabel = units + ' panels';
+    bkd = units + ' panels × ' + cFmt(mesh.price) + '/panel = ' + cFmt(matCost) + '<br>Poles & accessories included in panel price';
+
+  } else if (type === 'barbed') {
+    const rk = document.getElementById('c-barbedRoll').value;
+    const rl = parseInt(rk), rp = C_BARBED[rl];
+    units = Math.ceil(fenceLine / rl);
+    matCost = units * rp;
+    unitLabel = units + ' rolls';
+    bkd = units + ' rolls × ' + cFmt(rp) + '/roll (' + rl + 'm each) = ' + cFmt(matCost);
+
+  } else if (type === 'concertina') {
+    const ck = document.getElementById('c-concertinaCoil').value;
+    const cl = C_CONC_LEN[ck];
+    units = Math.ceil(fenceLine / cl);
+    matCost = units * 35000;
+    unitLabel = units + ' coils';
+    bkd = units + ' coils × ₦35,000/coil (' + cl + 'm each) = ' + cFmt(matCost);
+
+  } else if (type === 'wallspike') {
+    units = Math.ceil(fenceLine / 1.265);
+    matCost = units * 15000;
+    unitLabel = units + ' pcs';
+    bkd = units + ' pcs × ₦15,000/pc (1.265m each) = ' + cFmt(matCost);
+
+  } else if (type === 'electric') {
+    const ek = document.getElementById('c-energiser').value;
+    const ec = C_ENERGISER[ek] || 300000;
+    const wt = document.getElementById('c-wireType').value;
+    const st = parseInt(document.getElementById('c-strands').value);
+    const pkg = document.getElementById('c-elecPackage').value;
+    const tw = fenceLine * st;
+    let wc = 0, wd = '';
+    if (wt === 'aluminum') { const b = Math.ceil(tw/1000); wc = b*55946; wd = b + '×1000m alum = ' + cFmt(wc); }
+    else { const b = Math.ceil(tw/500); wc = b*150000; wd = b + '×500m galv = ' + cFmt(wc); }
+    const pc = posts * 3500;
+    let base = ec + wc + pc + 20000 + 20000 + 35000 + 60000 + 45000 + 37000 + 45000;
+    let full = 0, fd = '';
+    if (pkg === 'full') { full = 25000+170000+35000+15000+52000; fd = '<br>Full security extras: ' + cFmt(full); }
+    matCost = base + full;
+    units = posts; unitLabel = st + '-strand';
+    bkd = 'Energiser: ' + cFmt(ec) + '<br>Wire (' + st + ' strands): ' + wd + '<br>Poles (' + posts + '×₦3,500): ' + cFmt(pc) + '<br>Accessories: ' + cFmt(20000+20000+35000+60000+45000+37000+45000) + fd;
+  }
+
+  document.getElementById('c-resUnits').textContent = unitLabel || '—';
+  document.getElementById('c-resCost').textContent = matCost ? cFmt(matCost) : '—';
+  document.getElementById('c-breakdown').innerHTML = bkd;
+}
+
+document.addEventListener('DOMContentLoaded', calcUpdate);
+</script>
+
+<footer>
+  <div class="footer-logo">Perimeter<span>Pro</span></div>
+  <span class="footer-copy">© 2025 PerimeterPro. Orile Iganmu, Lagos State, Nigeria.</span>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = 'Sent ✓';
+  btn.style.background = '#2a6644';
+  setTimeout(() => {
+    btn.textContent = 'Send Enquiry →';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/2349035418489?text=Hello%2C%20I%20found%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20fencing." 
+   class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" width="28" height="28">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+  </svg>
+  <span class="wa-label">Chat with us</span>
+</a>
+
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 200;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.2rem 0.75rem 0.9rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+  }
+  .wa-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .wa-float { padding: 0.75rem; border-radius: 50%; }
+    .wa-label { display: none; }
+  }
+</style>
+
+
+<script>
+function triggerUpload(slug) {
+  document.getElementById('file-' + slug).click();
+}
+function loadImage(slug, input) {
+  if (!input.files || !input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const wrap = document.getElementById('img-wrap-' + slug);
+    const placeholder = document.getElementById('placeholder-' + slug);
+    placeholder.style.display = 'none';
+    let img = wrap.querySelector('img.service-photo');
+    if (!img) {
+      img = document.createElement('img');
+      img.className = 'service-photo';
+      wrap.appendChild(img);
+    }
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Scroll reveal
+const revealEls = document.querySelectorAll('.section-header, .services-grid, .why-grid, .projects-grid, .contact-grid, #trust > div, #calculator > *');
+revealEls.forEach(el => el.classList.add('reveal'));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Stagger service and project cards
+document.querySelector('.services-grid') && document.querySelector('.services-grid').classList.add('reveal-stagger');
+document.querySelector('.projects-grid') && document.querySelector('.projects-grid').classList.add('reveal-stagger');
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 10) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Animate stat numbers counting up
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 1200;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const nums = entry.target.querySelectorAll('.stat-num');
+      const data = [
+        { val: 39, suffix: '+' },
+        { val: 6, suffix: 'yr' },
+        { val: 48, suffix: 'hr' },
+        { val: 100, suffix: '%' }
+      ];
+      nums.forEach((num, i) => {
+        if (data[i]) animateCount(num, data[i].val, data[i].suffix);
+      });
+      statObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+const heroRight = document.querySelector('.hero-right');
+if (heroRight) statObserver.observe(heroRight);
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+let graceCurrentSlide = 0;
+const graceSlides = document.querySelectorAll('.grace-slide');
+const graceDots = document.querySelectorAll('.grace-dot');
+
+function graceSlide(index) {
+  graceSlides[graceCurrentSlide].style.opacity = '0';
+  graceDots[graceCurrentSlide].style.opacity = '0.4';
+  graceCurrentSlide = index;
+  graceSlides[graceCurrentSlide].style.opacity = '1';
+  graceDots[graceCurrentSlide].style.opacity = '1';
+}
+
+setInterval(() => {
+  graceSlide((graceCurrentSlide + 1) % graceSlides.length);
+}, 4000);
+</script>
+
+
+<script>
+// Grace Villa image slideshow
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.grace-slide');
+  if (slides.length >= 2) {
+    let current = 0;
+    setInterval(() => {
+      slides[current].style.opacity = '0';
+      current = (current + 1) % slides.length;
+      slides[current].style.opacity = '1';
+    }, 3000);
+  }
+});
+</script>
+
+
+<script>
+// Material supply slideshow
+let materialCurrent = 0;
+const materialSlides = document.querySelectorAll('.material-slide');
+const materialDots = document.querySelectorAll('.material-dot');
+const materialTotal = 14;
+let materialTimer = setInterval(nextMaterial, 2500);
+
+function goMaterial(index) {
+  materialSlides[materialCurrent].style.opacity = '0';
+  materialDots[materialCurrent].style.opacity = '0.3';
+  materialCurrent = index;
+  materialSlides[materialCurrent].style.opacity = '1';
+  materialDots[materialCurrent].style.opacity = '1';
+}
+
+function nextMaterial() {
+  goMaterial((materialCurrent + 1) % materialTotal);
+}
+
+function prevMaterial() {
+  goMaterial((materialCurrent - 1 + materialTotal) % materialTotal);
+}
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Generic service card slideshow — finds groups by class name
+  const groups = {};
+  document.querySelectorAll('.svc-slide').forEach(slide => {
+    // Get group from class list e.g. svc-slide-electric
+    slide.classList.forEach(cls => {
+      if (cls.startsWith('svc-slide-') && cls !== 'svc-slide') {
+        if (!groups[cls]) groups[cls] = [];
+        groups[cls].push(slide);
+      }
+    });
+  });
+
+  Object.values(groups).forEach(slides => {
+    if (slides.length < 2) return;
+    let current = 0;
+    setInterval(() => {
+      slides[current].style.opacity = '0';
+      current = (current + 1) % slides.length;
+      slides[current].style.opacity = '1';
+    }, 3000);
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const indSlides = document.querySelectorAll('.ind-slide');
+  if (indSlides.length === 2) {
+    let indCurrent = 0;
+    setInterval(() => {
+      indSlides[indCurrent].style.opacity = '0';
+      indCurrent = (indCurrent + 1) % indSlides.length;
+      indSlides[indCurrent].style.opacity = '1';
+    }, 3000);
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const oceanSlides = document.querySelectorAll('.ocean-slide');
+  if (oceanSlides.length === 2) {
+    let oceanCurrent = 0;
+    setInterval(() => {
+      oceanSlides[oceanCurrent].style.opacity = '0';
+      oceanCurrent = (oceanCurrent + 1) % oceanSlides.length;
+      oceanSlides[oceanCurrent].style.opacity = '1';
+    }, 3500);
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Gates service card slideshow
+  const gatesSlides = document.querySelectorAll('.gates-slide');
+  if (gatesSlides.length === 2) {
+    let gCurrent = 0;
+    setInterval(() => {
+      gatesSlides[gCurrent].style.opacity = '0';
+      gCurrent = (gCurrent + 1) % gatesSlides.length;
+      gatesSlides[gCurrent].style.opacity = '1';
+    }, 3000);
+  }
+
+  // Tin Can Island project slideshow
+  const tincanSlides = document.querySelectorAll('.tincan-slide');
+  if (tincanSlides.length === 3) {
+    let tCurrent = 0;
+    setInterval(() => {
+      tincanSlides[tCurrent].style.opacity = '0';
+      tCurrent = (tCurrent + 1) % tincanSlides.length;
+      tincanSlides[tCurrent].style.opacity = '1';
+    }, 3000);
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const pgSlides = document.querySelectorAll('.pg-slide');
+  if (pgSlides.length > 1) {
+    let pgCurrent = 0;
+    setInterval(() => {
+      pgSlides[pgCurrent].style.opacity = '0';
+      pgCurrent = (pgCurrent + 1) % pgSlides.length;
+      pgSlides[pgCurrent].style.opacity = '1';
+    }, 3000);
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tcSlides = document.querySelectorAll('.tc-slide');
+  if (tcSlides.length > 1) {
+    let tcCurrent = 0;
+    setInterval(() => {
+      tcSlides[tcCurrent].style.opacity = '0';
+      tcCurrent = (tcCurrent + 1) % tcSlides.length;
+      tcSlides[tcCurrent].style.opacity = '1';
+    }, 3000);
+  }
+});
+</script>
+
+</body>
+</html>
